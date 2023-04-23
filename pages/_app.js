@@ -1,9 +1,12 @@
-import "@/styles/globals.css";
+import "../styles/globals.css"
 
-const MyApp = ({ Component, pageProps }) => {
+import { NavBar } from "../Components";
+
+const MyApp = ({ Component, pageProps }) => (
   <div>
+    <NavBar />
     <Component {...pageProps} />
-  </div>;
-};
+  </div>
+);
 
 export default MyApp;
