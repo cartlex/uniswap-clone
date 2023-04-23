@@ -62,16 +62,22 @@ const NavBar = () => {
             </div>
             <p>Network name</p>
           </div>
-          <button onClick={() => {setOpenModel(true)}}>Address</button>
+          <button
+            onClick={() => {
+              setOpenModel(true);
+            }}
+          >
+            Address
+          </button>
           {openModel && (
             <Model setOpenModel={setOpenModel} connectWallet="connect" />
           )}
         </div>
-        {/* TokenList Component */}
-        {openTokenBox && (
-          <TokenList tokenDate="hey" setOpenTokenBox={setOpenTokenBox} />
-        )}
       </div>
+      {/* TokenList Component */}
+      {openTokenBox && (
+        <TokenList tokenDate="hey" setOpenTokenBox={setOpenTokenBox} />
+      )}
     </div>
   );
 };
