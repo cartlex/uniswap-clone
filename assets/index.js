@@ -1,4 +1,33 @@
+import arrowup from "./arrow up.png";
+import arrow from "./arrow.png";
+import arrowdown from "./arrowdown1.png";
+import cross from "./cross.png";
+import ether from "./ether.png";
+import etherlogo from "./etherlogo.png";
+import homecoin from "./homeicon.png";
+import leftarrow from "./leftarrow.png";
+import loading from "./loading.gif";
+import lock from "./lock.png";
+import question from "./question.png";
 import search from "./Search.png";
+import tick from "./tick.png";
 import uniswap from "./uniswap.png";
+import wallet from "./wallet.png";
 
-export default { search, uniswap };
+export default {
+  search,
+  uniswap,
+  arrowup,
+  arrowdown,
+  arrow,
+  cross,
+  ether,
+  etherlogo,
+  homecoin,
+  leftarrow,
+  loading,
+  lock,
+  question,
+  tick,
+  wallet,
+};

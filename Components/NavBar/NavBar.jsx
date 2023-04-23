@@ -7,7 +7,7 @@ import Image from "next/image";
 import Style from "./NavBar.module.css";
 import { Model, TokenList } from "../index";
 import { useState } from "react";
-import { images } from "../../assets";
+import images from "../../assets";
 
 const NavBar = () => {
   const menuItems = [
@@ -46,8 +46,34 @@ const NavBar = () => {
             </Link>
           ))}
         </div>
-
-        <div className={Style.NavBar_box_right}>Right</div>
+            {/* Middle section */}
+            
+        <div className={Style.NavBar_box_middle}>
+            <div className={Style.NavBar_box_middle}>
+                <div className={Style.NavBar_box_middle_search}>
+                    <div className={Style.NavBar_box_middle_img}>
+                        <Image src={images.search} alt="search" width={20} height={20}/>
+                    </div>
+                    <input type="text" placeholder="Search tokens"/>
+                </div>
+            </div>
+        </div>
+        <div className={Style.NavBar_box_right}>
+            <div className={Style.NavBar_box_right_box}>
+                <div className={Style.NavBar_box_right_box_img}>
+                    <Image src={images.ether} alt="NetWork" height={30} width={30}/>
+                </div>
+                <p>Network name</p>
+            </div>
+            <button onClick={() => {}}>Address</button>
+            {openModel && (
+                <Model setOpenModel={setOpenModel} connectWallet="connect"/>
+            )}
+        </div>
+        {/* TokenList Component */}
+        {openTokenBox && (
+            <TokenList tokenDate="hey" setOpenTokenBox={setOpenTokenBox}/>
+        )}
       </div>
     </div>
   );
