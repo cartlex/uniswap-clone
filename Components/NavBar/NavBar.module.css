@@ -1,18 +1,17 @@
-.NavBar {
+.NavBar{
     width: 90%;
-    margin: 2rem auto;
-
+    margin:  2rem auto;
 }
 
-.NavBar_box {
+.NavBar_box{
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     align-items: center;
-    justify-content: space-beetwen;
+    justify-content: space-between;
     gap: 1rem;
 }
 
-.NavBar_box_left {
+.NavBar_box_left{
     display: flex;
     gap: 4rem;
     align-items: center;

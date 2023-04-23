@@ -1,7 +1,7 @@
 import arrowup from "./arrow up.png";
 import arrow from "./arrow.png";
 import arrowdown from "./arrowdown1.png";
-import cross from "./cross.png";
+import close from "./close.png";
 import ether from "./ether.png";
 import etherlogo from "./etherlogo.png";
 import homecoin from "./homeicon.png";
@@ -20,7 +20,7 @@ export default {
   arrowup,
   arrowdown,
   arrow,
-  cross,
+  close,
   ether,
   etherlogo,
   homecoin,
