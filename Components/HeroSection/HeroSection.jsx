@@ -4,7 +4,7 @@ import Image from "next/image";
 import images from "../../assets";
 import Style from "./HeroSection.module.css";
 
-import { TokenList, SearchToken } from "../index";
+import { TokenList, SearchToken, Token } from "../index";
 import { useState } from "react";
 const HeroSection = ({ accounts, tokenData }) => {
   const [openSetting, setOpenSetting] = useState(false);
@@ -69,7 +69,7 @@ const HeroSection = ({ accounts, tokenData }) => {
           </button>
         )}
       </div>
-      {openSetting && <Token openSetting={openSetting} />}
+      {openSetting && <Token setOpenSetting={setOpenSetting} />}
       {openSetting && (
         <SearchToken
           openToken={setOpenToken}
