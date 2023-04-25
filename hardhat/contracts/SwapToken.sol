@@ -30,4 +30,28 @@ contract SingleSwapToken {
 
         amountOut = swapRouter.exactInputSingle(params);
     }
+
+    function swapExactInputString(uint amountOut, uint amountInMaximum) external returns (uint amountIn) {
+        TransferHelper.safeTransferFrom(WETH9, msg.sender, address(this), amountInMaximum);
+
+        TransferHelper.safeApprove(WETH9, address(this), amountInMaximum);
+
+        ISwapRouter.ExactOutputSingleParams memory params = ISwapRouter.ExactInputSingleParams({
+            tokenIn: WETH9,
+            tokenOut: DAI,
+            fee: 3000,
+            recipient: msg.sender,
+            deadline: block.timestamp,
+            amountOut: amountIn,
+            amountInMaximum: amountInMaximum,
+            sqrtPriceLimitX96: 0 
+        });
+
+        amountIn = swapRouter.exactOutputSingle(params);
+
+        if(amountIn < amountInMaximum) {
+            TransferHelper.safeApprove(WETH9, address(swapRouter), 0);
+            TransferHelper.safeTransfer(WETH9, msg.sender, amountInMaximum - amountIn);
+        }
+    }
 }
