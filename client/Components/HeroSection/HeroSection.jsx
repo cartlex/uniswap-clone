@@ -1,7 +1,7 @@
 import Image from "next/image";
 
 //INTERNAL
-import images from "../../assets";
+import images from "../../assets"
 import Style from "./HeroSection.module.css";
 
 import { SearchToken, Token } from "../index";
