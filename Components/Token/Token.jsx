@@ -19,6 +19,7 @@ const Token = ({ setOpenSetting }) => {
               setOpenSetting(false);
             }}
           />
+          </div>
           <p className={Style.Token_box_para}>
             Slippage tollerance("")
             <Image src={images.lock} alt="img" width={20} height={20} />
@@ -38,11 +39,10 @@ const Token = ({ setOpenSetting }) => {
           <h2>Interface setting</h2>
           <div className={Style.Token_box_toggle}>
             <p className={Style.Token_box_para}>Transaction deadline</p>
-            <Toggle />
+            <Toggle label="no"/>
           </div>
         </div>
       </div>
-    </div>
   );
 };
 

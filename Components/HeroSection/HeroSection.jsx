@@ -4,8 +4,9 @@ import Image from "next/image";
 import images from "../../assets";
 import Style from "./HeroSection.module.css";
 
-import { TokenList, SearchToken, Token } from "../index";
+import { SearchToken, Token } from "../index";
 import { useState } from "react";
+
 const HeroSection = ({ accounts, tokenData }) => {
   const [openSetting, setOpenSetting] = useState(false);
   const [openToken, setOpenToken] = useState(false);
