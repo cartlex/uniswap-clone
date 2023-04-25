@@ -10,7 +10,7 @@ import { useState } from "react";
 const HeroSection = ({ accounts, tokenData }) => {
   const [openSetting, setOpenSetting] = useState(false);
   const [openToken, setOpenToken] = useState(false);
-  const [openTokenTwo, setOpenTokenTwo] = useState(false);
+  const [openTokensTwo, setOpenTokensTwo] = useState(false);
 
   const [tokenOne, setTokenOne] = useState({
     name: "",
@@ -38,7 +38,7 @@ const HeroSection = ({ accounts, tokenData }) => {
         </div>
         <div className={Style.HeroSection_box_input}>
           <input type="text" placeholder="0" />
-          <button onClick={() => openToken(true)}>
+          <button onClick={() => setOpenToken(true)}>
             <Image
               src={tokenOne.image || images.etherlogo}
               width={20}
@@ -51,7 +51,7 @@ const HeroSection = ({ accounts, tokenData }) => {
         </div>
         <div className={Style.HeroSection_box_input}>
           <input type="text" placeholder="0" />
-          <button onClick={() => openToken(true)}>
+          <button onClick={() => setOpenTokensTwo(true)}>
             <Image
               src={tokenTwo.image || images.etherlogo}
               width={20}
@@ -71,16 +71,17 @@ const HeroSection = ({ accounts, tokenData }) => {
         )}
       </div>
       {openSetting && <Token setOpenSetting={setOpenSetting} />}
-      {openSetting && (
+      
+      {openToken && (
         <SearchToken
           openToken={setOpenToken}
           tokens={setTokenOne}
           tokenData={tokenData}
         />
       )}
-      {openSetting && (
+      {openTokensTwo && (
         <SearchToken
-          openToken={setOpenTokenTwo}
+          openToken={setOpenTokensTwo}
           tokens={setTokenTwo}
           tokenData={tokenData}
         />
